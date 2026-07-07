@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CAMO CHAMELEON — 그려서 숨는 카멜레온</title>
+  <meta name="description" content="배경색을 스포이트로 찍어 카멜레온 몸에 칠하고, 술래 스캔을 통과해 숨어라. 무료 · 설치 없이 브라우저에서 바로.">
+  <meta name="theme-color" content="#0d1117">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦎</text></svg>">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CAMO CHAMELEON — 그려서 숨는 카멜레온">
+  <meta property="og:description" content="배경색을 찍어 몸에 칠하고 술래 스캔을 통과해라. 같은 시드로 친구와 점수 대결.">
+  <meta property="og:url" content="https://nohseongmin.github.io/camo-chameleon/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🦎 CAMO CHAMELEON</h1>
+    <p class="tagline">배경색을 찍어 몸에 칠하고 — 술래 스캔을 통과해 숨어라.</p>
+  </header>
+
+  <main>
+    <div id="stage">
+      <canvas id="game" width="405" height="620"></canvas>
+      <div id="timerbar"><div id="timerFill"></div></div>
+
+      <div id="intro" class="overlay">
+        <div class="big">🦎</div>
+        <h2>그려서 숨어라</h2>
+        <ol>
+          <li>🎨 <b>스포이트</b>로 배경색을 찍는다</li>
+          <li>🖌️ 카멜레온 <b>몸에 칠해</b> 배경에 녹인다</li>
+          <li>👁️ 시간이 끝나면 <b>술래가 스캔</b> — 얼마나 숨었나?</li>
+        </ol>
+        <button id="btnStart" class="btn primary big">▶ 시작</button>
+      </div>
+
+      <div id="result" class="overlay hidden">
+        <div id="resVerdict" class="verdict"></div>
+        <div class="ring"><div class="score" id="resScore">–</div><div class="of">위장률</div></div>
+        <div id="resGrade" class="grade"></div>
+        <div class="overlay-buttons">
+          <button id="btnReplay" class="btn secondary">🔁 다시</button>
+          <button id="btnNext" class="btn primary">🦎 새 장면</button>
+          <button id="btnShare" class="btn secondary">🔗 공유</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="tools">
+      <div class="toolrow">
+        <span class="curwrap" title="현재 색"><span id="curColor" class="curColor"></span></span>
+        <button id="eyedrop" class="btn tool" title="배경색 찍기">🎨 스포이트</button>
+        <div id="swatches" class="swatches" aria-label="배경에서 뽑은 색"></div>
+      </div>
+      <label class="brushrow">붓 <span id="brushVal">18</span>px
+        <input type="range" id="brush" min="6" max="42" step="2" value="18">
+      </label>
+    </section>
+
+    <div class="action-row">
+      <button id="btnHide" class="btn primary big">👁️ 숨기 완료 — 스캔!</button>
+      <button id="btnMute" class="btn secondary" title="소리 켜기/끄기">🔊</button>
+    </div>
+
+    <div class="ad-slot">AD SLOT (reserved)</div>
+  </main>
+
+  <footer>
+    <p>같은 <b>시드</b>면 같은 장면. 링크를 공유하면 친구가 같은 장면에 도전 — 위장률로 대결.</p>
+  </footer>
+
+  <div id="toast" class="hidden"></div>
+  <script src="game.js?v=1"></script>
+</body>
+</html>

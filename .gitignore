@@ -1,0 +1,13 @@
+# secrets — never commit (none used yet, but guard anyway)
+.env
+.env.*
+*.key
+*.pem
+
+# OS / editor / tooling
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.claude/
+node_modules/
